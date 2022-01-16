@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-  main();
+document.addEventListener("DOMContentLoaded", async () => {
+  await main();
 });
 
 async function main() {}
