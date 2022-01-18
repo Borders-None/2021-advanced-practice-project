@@ -1,4 +1,54 @@
-p {
-    font-size: 20px;
-    color: aqua;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid whitesmoke;
+}
+.frist {
+  display: flex;
+  align-items: center;
+}
+.frist img {
+  object-fit: contain;
+  height: 80px;
+  margin-left: 5px;
+}
+.frist i {
+  padding: 10px;
+  cursor: pointer;
+  color: gray;
+}
+.second {
+  display: flex;
+  flex: 0.7;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+}
+.second i {
+  color: gray;
+}
+
+.second input {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: medium;
+  background-color: transparent;
+}
+.last {
+  display: flex;
+  padding-right: 20px;
+}
+.last i {
+  color: gray;
+  padding-right: 10px;
+  cursor: pointer;
 }
