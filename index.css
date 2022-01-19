@@ -52,3 +52,7 @@
   padding-right: 10px;
   cursor: pointer;
 }
+.main {
+  display: flex;
+  height: 100vh;
+}
