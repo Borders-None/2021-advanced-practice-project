@@ -12,4 +12,6 @@ async function main() {
   var number = 5;
 
   console.log(5);
+
+  console.log("Finished!");
 }
