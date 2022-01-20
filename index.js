@@ -4,4 +4,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function main() {
   console.log("Hello world!");
+
+  var number = 5;
+
+  console.log(5);
 }
