@@ -8,4 +8,8 @@ async function main() {
   for (let i = 0; i < 10; i++) {
     console(i);
   }
+
+  var number = 5;
+
+  console.log(5);
 }
