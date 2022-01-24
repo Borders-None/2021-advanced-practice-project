@@ -16,4 +16,5 @@ async function main() {
   console.log("Finished!");
 
   number = number * 10;
+  number += 10;
 }
