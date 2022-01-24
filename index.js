@@ -14,4 +14,6 @@ async function main() {
   console.log(5);
 
   console.log("Finished!");
+
+  number += 10;
 }
