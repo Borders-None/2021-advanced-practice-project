@@ -56,21 +56,21 @@
   display: flex;
   height: 100vh;
 }
-.nav{
+.nav {
   display: flex;
 }
-.bar{
+.bar {
   display: flex;
   justify-content: space-between;
   padding: 50px;
 }
-.bar-{
+.bar- {
   display: flex;
   flex: 1;
   border-top: solid 1px whitesmoke;
   border-bottom: solid 1px whitesmoke;
 }
-.side{
+.side {
   display: flex;
   justify-items: center;
   flex-direction: column;
@@ -78,7 +78,7 @@
   width: 300px;
 
 }
-.side-first{
+.side-first {
   display: flex;
   padding-bottom: 20px;
 }
@@ -109,4 +109,10 @@ button{
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
 }
