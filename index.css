@@ -60,17 +60,6 @@
 .nav {
   display: flex;
 }
-.bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-}
-.bar- {
-  display: flex;
-  flex: 1;
-  border-top: solid 1px whitesmoke;
-  border-bottom: solid 1px whitesmoke;
-}
 .side {
   display: flex;
   justify-items: center;
@@ -105,6 +94,10 @@ button{
   cursor: pointer;
   color: #818181;
   padding: 5px;
+}
+.side-:hover{
+  border-top: 1px solid whitesmoke;
+  box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
 }
 .bar ,i , h4 {
   display: flex;
