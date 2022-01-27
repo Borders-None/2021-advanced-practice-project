@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -26,7 +27,7 @@
 }
 .second {
   display: flex;
-  flex: 0.7;
+  flex: 0.6;
   align-items: center;
   background-color: whitesmoke;
   padding: 10px;
@@ -53,56 +54,78 @@
   padding-right: 10px;
   cursor: pointer;
 }
+
 .main {
   display: flex;
   height: 100vh;
 }
-.nav {
-  display: flex;
-}
-.side {
-  display: flex;
-  justify-items: center;
-  flex-direction: column;
-  padding: 20px;
-  width: 300px;
 
+.sidebar {
+  flex: 0.3;
+  max-width: 300px;
+  padding-right: 20px;
 }
-.side-first {
-  display: flex;
-  padding-bottom: 20px;
-}
-.side-first i , button {
+.compose {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  color: gray;
+  padding: 15px;
+  border-radius: 30px;
+  background-color: #fff;
   display: flex;
   align-items: center;
-  border-radius: 1.5em;
-  padding: 10px;
-  background-color: whitesmoke;
+  cursor: pointer;
+  outline: none;
   border: none;
-  text-transform: capitalize;
-}
-button{
   box-shadow: 0px 2px 5px -2px rgb(0, 0, 0, 0.75);
 }
-.side-{
-  display: flex;
-  padding-bottom: 20px;
+.compose i {
+  margin-right: 5px;
 }
-.side- i , h4{
+.sidebar-option {
   display: flex;
   align-items: center;
+  height: 40px;
+  padding: 0 10px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   cursor: pointer;
   color: #818181;
+}
+
+.sidebar-option i,
+span {
   padding: 5px;
 }
-.side-:hover{
-  border-top: 1px solid whitesmoke;
-  box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
+.sidebar-option h3 {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
 }
-.bar ,i , h4 {
+
+.sidebar-option:hover,
+.sidebar-option:hover h3,
+.sidebar-option:hover span {
+  background-color: #fcecec;
+  color: gray;
+  font-weight: 800;
+}
+.option_active:hover {
+  background-color: #fcecec;
+  color: #c04b37;
+}
+
+.sidebar-footer {
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+.footericons i {
+  margin: 7px;
   cursor: pointer;
+  color: #818181;
 }
 .email-list {
   flex: 1;
@@ -179,6 +202,7 @@ input {
 .emailrow:hover {
   border-top: 1px solid whitesmoke;
   box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
+  border-bottom-left-radius: 30px;
 }
 
 .options {
