@@ -202,6 +202,7 @@ input {
 .emailrow:hover {
   border-top: 1px solid whitesmoke;
   box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
+  border-bottom-left-radius: 30px;
 }
 
 .options {
