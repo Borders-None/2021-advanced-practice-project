@@ -3,10 +3,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function main() {
-  console.log("Hello world!");
+  let response = await fetch(" http://localhost:3000apiemails");
+  let data = await response.json();
+  console.log(data);
 
   for (let i = 0; i < 10; i++) {
-    console(i);
+    console.log(i);
+    return data;
   }
 
   var number = 5;
