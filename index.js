@@ -11,7 +11,7 @@ async function main() {
     console.log(i);
     return data;
   }
-  const showEmail = (document.querySelector(".emailrow").innerHTML =
+  const showEmail = document.querySelector(".emailrow").innerHTML =
     "<h1>" +
     data[1].id +
     "</h1>" +
