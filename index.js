@@ -11,13 +11,19 @@ async function main() {
     console.log(i);
     return data;
   }
-
-  var number = 5;
-
-  console.log(5);
-
-  console.log("Finished!");
-
-  number = number * 10;
-  number += 10;
+  const showEmail = (document.querySelector(".emailrow").innerHTML =
+    "<h1>" +
+    data[1].id +
+    "</h1>" +
+    +"<h3>" +
+    data[1].from +
+    "</h3>" +
+    "<h1>" +
+    data[1].title +
+    "</h1>" +
+    "<h1>" +
+    data[1].date +
+    "</h1>");
+  showEmail.addEventListener("click", main);
 }
+console.log(main());
