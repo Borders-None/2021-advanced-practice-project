@@ -11,6 +11,7 @@ async function main() {
     var email = data.emails[i];
 
     var emaiList = document.getElementById("email-list");
+    emaiList.addEventListener("click", showEmails);
     var emailElement = document.createElement("div");
     emailElement.className = "emails";
     emaiList.appendChild(emailElement);
@@ -18,7 +19,7 @@ async function main() {
     //append emailrow
 
     var emailRow = document.createElement("div");
-    emailRow.className = "row";
+    emailRow.className = "emailrow";
     emailElement.appendChild(emailRow);
 
     //append options
@@ -27,25 +28,35 @@ async function main() {
     emailOption.className = "options";
     emailRow.appendChild(emailOption);
     emailOption.innerHTML =
-      "<input type='checkbox'><i class='fa fa-star-o' aria-hidden='true'></i><span class='material-icons'>label_important</span>";
+      "<input type='checkbox'><i class='fa fa-star-o' aria-hidden='true'></i><span class='material-icons'>label_important</span> Fatma";
 
     //append h3 title
 
     var rowTitel = document.createElement("h3");
     rowTitel.className = "row-titel";
-    emailOption.appendChild(rowTitel);
+    emaiList.appendChild(rowTitel);
+    rowTitel.innerText = "Fatma";
 
     //append message div
 
     var rowMessage = document.createElement("div");
     rowMessage.className = "row-message";
-    rowTitel.appendChild(rowMessage);
+    emaiList.appendChild(rowMessage);
 
     //append h4
     var textMessage = document.createElement("h4");
     textMessage.className = "message";
     rowMessage.appendChild(textMessage);
+    textMessage.innerText = "check your page";
+
+    //append p tag
+    var paragraph = document.createElement("p");
+    paragraph.className = "time";
+    emaiList.appendChild(paragraph);
+    paragraph.innerText = "11:00am";
 
     console.log(email);
   }
 }
+
+function showEmails() {}
