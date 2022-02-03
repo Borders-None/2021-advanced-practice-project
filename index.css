@@ -233,3 +233,25 @@ input {
   font-size: 10px;
   font-weight: bold;
 }
+.mailbox {
+  padding: 10px;
+  display: flex;
+  justify-items: flex-start;
+}
+.email_row{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 4px 0px 0px wheat;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.email_row:hover{
+  background-color: #c04b37;
+}
+td{
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 60px;
+
+}
