@@ -31,6 +31,13 @@ function getMails(data){
    box.appendChild(element);
    element.classList.add('email_row');
 
+   var click = document.createElement('button');
+   element.appendChild(click);
+   click.classList.add('click');
+   click.innerText = 'click';
+   click.setAttribute('id' , 'mail'+ data.emails[i].id);
+   click.onclick = onMailClicked;
+
    var choice = document.createElement('input');
    choice.setAttribute("type" , "checkbox");
    element.appendChild(choice);
@@ -52,11 +59,8 @@ function getMails(data){
 
 }
 
-
-/*getMails("http://localhost:3000/api/emails") ;*/
-
-/*async function getMails(url) {
-  let request = await fetch(url);
-  let Response = await request.emails();
-  document.getElementById(). innerHTML = Response;
-}*/
+function onMailClicked(event) {
+  var clickedButton = event.target.id.substring(4);
+  //var str = clickedButton.substring(4);
+  window.open(`./email-details.html?id=${clickedButton}` , "_self");
+}
