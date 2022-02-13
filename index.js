@@ -17,46 +17,49 @@ async function main() {
 
   number = number * 10;
   number += 10;
-};
-var url = "http://localhost:3000/api/emails" ;
+}
+var url = "http://localhost:3000/api/emails";
 fetch(url)
-  .then(Response => Response.json())
-  .then(data => getMails(data));
+  .then((Response) => Response.json())
+  .then((data) => getMails(data));
 
-function getMails(data){
+function getMails(data) {
   console.log(data);
-  for(let i=0; i < data.emails.length ; i++){
-   var element = document.createElement('tr');
-   var box = document.getElementById('mailbox');
-   box.appendChild(element);
-   element.classList.add('email_row');
+  for (let i = 0; i < data.emails.length; i++) {
+    var element = document.createElement("tr");
 
-   var choice = document.createElement('input');
-   choice.setAttribute("type" , "checkbox");
-   element.appendChild(choice);
+    var box = document.getElementById("mailbox");
+    box.appendChild(element);
+    element.classList.add("email_row");
 
-   var nameSender = document.createElement('td');
-   element.appendChild(nameSender);
-   nameSender.innerText = data.emails[i].from;
+    var choice = document.createElement("input");
+    choice.setAttribute("type", "checkbox");
+    element.appendChild(choice);
 
-   var title = document.createElement('td');
-   element.appendChild(title);
-   title.innerText = data.emails[i].title;
+    var nameSender = document.createElement("td");
+    element.appendChild(nameSender);
+    nameSender.innerText = data.emails[i].from;
 
-   var time = document.createElement('td');
-   element.appendChild(time);
-   var date = new Date(data.emails[i].date);
-   var dateString = date.toLocaleDateString();
-   time.innerText = dateString;
+    var title = document.createElement("td");
+    element.appendChild(title);
+    title.innerText = data.emails[i].title;
+
+    var time = document.createElement("td");
+    element.appendChild(time);
+    var date = new Date(data.emails[i].date);
+    var dateString = date.toLocaleDateString();
+    time.innerText = dateString;
+
+    var button = document.createElement("button");
+    element.appendChild(button);
+    button.className = "button";
+    button.onclick = onEmailClicked;
+    button.id = "email-" + data.emails[i].id;
   }
-
 }
 
-
-/*getMails("http://localhost:3000/api/emails") ;*/
-
-/*async function getMails(url) {
-  let request = await fetch(url);
-  let Response = await request.emails();
-  document.getElementById(). innerHTML = Response;
-}*/
+function onEmailClicked(event) {
+  const emailId = event.target.id;
+  const email = emailId.substring(6);
+  window.open("./email-details.html?id=" + email, "_self");
+}
