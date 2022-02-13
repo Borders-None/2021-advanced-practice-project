@@ -2,11 +2,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const emailId = urlParams.get("id");
 
+    var wait = document.getElementById('mail_content');
+    var  letterWait = document.createElement('h2');
+    wait.appendChild(letterWait);
+    letterWait.innerText= "Loading...";
+
     var url = "http://localhost:3000/api/emails/" + emailId;
     fetch(url)
         .then(Response => Response.json())
-        .then(data => showDetails(data));
-
+        .then(data => {
+            wait.removeChild(letterWait);
+            showDetails(data)
+        });
+      
     function showDetails(data){
         console.log(data);
         var mainbox = document.getElementById('mail_content');

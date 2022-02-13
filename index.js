@@ -5,24 +5,24 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function main() {
   console.log("Hello world!");
 
-  for (let i = 0; i < 10; i++) {
-    console.log(i);
-  }
+  var wait = document.getElementById('mailbox');
+  var  letterWait = document.createElement('h2');
+  wait.appendChild(letterWait);
+  letterWait.innerText= "Loading...";
 
-  var number = 5;
 
-  console.log(5);
-
-  console.log("Finished!");
-
-  number = number * 10;
-  number += 10;
-};
 var url = "http://localhost:3000/api/emails" ;
-fetch(url)
+/*fetch(url)
   .then(Response => Response.json())
-  .then(data => getMails(data));
-
+  .then(data => {
+   // wait.removeChild(letterWait)
+    getMails(data)
+  });*/
+  var response = await fetch(url);
+  var data = await response.json();
+  wait.removeChild(letterWait);
+  getMails(data);
+}
 function getMails(data){
   console.log(data);
   for(let i=0; i < data.emails.length ; i++){

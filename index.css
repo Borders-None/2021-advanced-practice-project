@@ -306,3 +306,6 @@ td{
 .footer{
   display: flex;
 }
+.replay:hover{
+  background-color: #c04b37;
+}
