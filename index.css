@@ -238,7 +238,7 @@ input {
   display: flex;
   justify-items: flex-start;
 }
-.email_row{
+.email_row {
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 4px 0px 0px wheat;
@@ -247,15 +247,20 @@ input {
   cursor: pointer;
   background-color: yellow;
 }
-.email_row:hover{
+.email_row:hover {
   background-color: #c04b37;
 }
-td{
+td {
   display: flex;
   justify-content: flex-start;
   padding-right: 60px;
-
 }
+.button {
+  padding: 12px 10px 15px;
+  background-color: #c04b37;
+  margin: 30px;
+}
+
 .options{
   display: flex;
   padding: 20px;

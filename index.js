@@ -80,7 +80,7 @@ function createRowEmailElement(email){
   return element; 
 }
 
-function getMails(data){
+function getMails(data) {
   console.log(data);
   for(let i=0; i < data.emails.length ; i++){
    var email = data.emails[i]; 
