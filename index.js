@@ -23,40 +23,71 @@ var url = "http://localhost:3000/api/emails" ;
   wait.removeChild(letterWait);
   getMails(data);
 }
+
+function createClickElement(email){
+  var click = document.createElement('button');
+  click.classList.add('click');
+  click.innerText = 'click';
+  click.setAttribute('id' , 'mail' +email.id);
+  click.onclick = onMailClicked;
+  return click;
+}
+
+function createChoiceElement(){
+  var choice = document.createElement('input');
+  choice.setAttribute("type" , "checkbox");
+  return choice;
+}
+
+function createSenderElement(email){
+  var nameSender = document.createElement('td');
+   nameSender.innerText = email.from;
+   return nameSender;
+}
+
+function createTitleElement(email){
+  var title = document.createElement('td');
+  title.innerText = email.title;
+  return title;
+}
+
+function createDateElement(email){
+  var time = document.createElement('td');
+  var date = new Date(email.date);
+   var dateString = date.toLocaleDateString();
+   time.innerText = dateString;
+   return time;
+}
+
+function createRowEmailElement(email){
+  var element = document.createElement('tr');
+  element.classList.add('email_row');
+
+  var click = createClickElement(email);
+  element.appendChild(click);
+  
+  var choice = createChoiceElement();
+  element.appendChild(choice);
+
+  var nameSender = createSenderElement(email);
+  element.appendChild(nameSender);
+  
+  var title = createTitleElement(email);
+  element.appendChild(title);
+  
+  var time = createDateElement(email);
+  element.appendChild(time);
+  return element; 
+}
+
 function getMails(data){
   console.log(data);
   for(let i=0; i < data.emails.length ; i++){
-   var element = document.createElement('tr');
+   var email = data.emails[i]; 
+   var row = createRowEmailElement(email);
    var box = document.getElementById('mailbox');
-   box.appendChild(element);
-   element.classList.add('email_row');
-
-   var click = document.createElement('button');
-   element.appendChild(click);
-   click.classList.add('click');
-   click.innerText = 'click';
-   click.setAttribute('id' , 'mail'+ data.emails[i].id);
-   click.onclick = onMailClicked;
-
-   var choice = document.createElement('input');
-   choice.setAttribute("type" , "checkbox");
-   element.appendChild(choice);
-
-   var nameSender = document.createElement('td');
-   element.appendChild(nameSender);
-   nameSender.innerText = data.emails[i].from;
-
-   var title = document.createElement('td');
-   element.appendChild(title);
-   title.innerText = data.emails[i].title;
-
-   var time = document.createElement('td');
-   element.appendChild(time);
-   var date = new Date(data.emails[i].date);
-   var dateString = date.toLocaleDateString();
-   time.innerText = dateString;
+   box.appendChild(row);
   }
-
 }
 
 function onMailClicked(event) {
@@ -64,3 +95,62 @@ function onMailClicked(event) {
   //var str = clickedButton.substring(4);
   window.open(`./email-details.html?id=${clickedButton}` , "_self");
 }
+
+
+function search(){
+  var searchElement = document.getElementById('search');
+  var searchValue = searchElement.value;
+  console.log(searchValue);
+  var emailRows = document.getElementsByTagName('tr');
+  for(let i=0; i<emailRows.length; i++){
+    let emailRow = emailRows[i];
+    var senderElement = emailRow.querySelector('td').firstChild;
+    console.dir(senderElement);
+    var senderValue = senderElement.textContent;
+    //console.log(senderValue);
+    var titleElement = emailRow.querySelector('td');
+    console.dir(titleElement);
+    if(senderValue.toUpperCase().includes(searchValue.toUpperCase())){
+      //emailRow.style.backgroundColor = "green";
+      emailRow.classList.add("search");
+      emailRow.classList.remove('hidden');
+    }
+    else {
+      //emailRow.style.background = "none";
+      emailRow.classList.remove("search");
+      emailRow.classList.add('hidden');
+    }
+  }
+}
+
+function readNewMailData(){
+  var senderElement = document.getElementById('sender');
+  var senderValue = senderElement.value;
+  console.log(senderValue);
+
+  var titleElement = document.getElementById('title');
+  var titleValue = titleElement.value ;
+  console.log(titleValue);
+
+  var contentElement = document.getElementById('content');
+  var contentValue = contentElement.value ;
+  console.log(contentValue);
+  
+  var currentDate = new Date().toLocaleDateString();
+  var email = {from : senderValue , title : titleValue , date : currentDate};
+  return email;
+}
+
+function send(){
+  var email = readNewMailData();
+  var newRow = createRowEmailElement(email);
+  var box = document.getElementById('mailbox');
+  box.appendChild(newRow);
+}
+
+/*var newMailList = document.getElementById('new');
+var newMail = document.createElement('div');
+newMailList.appendChild(newMail);
+
+var senderRow = document.createElement('input');
+newMailList.appendChild(senderRow);*/

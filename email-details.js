@@ -18,21 +18,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     function showDetails(data){
         console.log(data);
         var mainbox = document.getElementById('mail_content');
-        var sender = document.createElement('h4');
+        var sender = document.createElement('div');
         mainbox.appendChild(sender);
         sender.innerText = "From:" + " "  + data.from;
 
-        var title = document.createElement('label')
+        var title = document.createElement('div')
         mainbox.appendChild(title);
         title.innerText = "Subject:" + " " + data.title;
 
-        var time = document.createElement('label');
+        var time = document.createElement('div');
         mainbox.appendChild(time);
         var date =  new Date (data.date);
         var dateString = date.toLocaleDateString();
         time.innerText = dateString;
 
-        var body = document.createElement('p');
+        var body = document.createElement('div');
         mainbox.appendChild(body);
         body.innerText = data.body;
 

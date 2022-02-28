@@ -111,11 +111,20 @@
           </div>
        </div> 
        <table class="mailbox">
+          <input id="search">
+          <button onclick="search()" class="search">Search</button>
+          <button onclick="sorting()">Sort</button>
           <tbody id="mailbox">
             
           </tbody>
 
-       </table>            
+       </table>  
+       <div id="new">
+         <input id="sender" type="text" >
+         <input id="title" type="text" >
+         <textarea  name="" id="content" cols="30" rows="10"></textarea>
+         <button onclick="send()">Send</button>
+       </div>          
    </div>             
   </body>
 </html>
