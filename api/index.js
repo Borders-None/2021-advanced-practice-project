@@ -2,6 +2,7 @@ import express from "express";
 import emails from "./db.js";
 import bodyParser from "body-parser";
 import multer from "multer";
+import cors from "cors";
 
 const port = 3000;
 
@@ -21,14 +22,7 @@ app.use(upload.array());
 app.use(express.static("public"));
 
 // Set up CORS
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+app.use(cors());
 
 // get all emails
 app.get("/api/emails", async (req, res) => {
