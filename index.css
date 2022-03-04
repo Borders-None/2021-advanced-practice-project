@@ -129,7 +129,6 @@ span {
 }
 .email-list {
   flex: 1;
-  overflow: scroll;
 }
 
 .email-list i,
@@ -191,19 +190,6 @@ span {
 input {
   margin: 5px;
 }
-.emailrow {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  border-bottom: 1px solid whitesmoke;
-  cursor: pointer;
-  z-index: 999;
-}
-.emailrow:hover {
-  border-top: 1px solid whitesmoke;
-  box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
-  border-bottom-left-radius: 30px;
-}
 
 .options {
   display: flex;
@@ -233,27 +219,46 @@ input {
   font-size: 10px;
   font-weight: bold;
 }
+#mailbox {
+  width: 100%;
+  height: 400px;
+  text-align: center;
+}
 .mailbox {
   padding: 10px;
   display: flex;
-  justify-items: flex-start;
+  justify-items: center;
+  align-items: center;
 }
 .email_row {
   display: flex;
-  justify-content: space-between;
-  box-shadow: 2px 4px 0px 0px wheat;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid whitesmoke;
+  border-bottom: 1px solid whitesmoke;
   cursor: pointer;
-  background-color: yellow;
+  z-index: 999;
 }
 .email_row:hover {
-  background-color: #c04b37;
+  border-top: 1px solid whitesmoke;
+  box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
 }
 td {
   display: flex;
-  justify-content: flex-start;
-  padding-right: 60px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-right: 35px;
+}
+.click {
+  width: 60px;
+  height: 20px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.click:hover {
+  transform: scale(1.5);
 }
 .button {
   padding: 12px 10px 15px;
@@ -261,21 +266,21 @@ td {
   margin: 30px;
 }
 
-.options{
+.options {
   display: flex;
   padding: 20px;
   border-bottom: solid 1px #fcecec;
 }
-.options_{
+.options_ {
   display: flex;
   align-items: center;
 }
-.options_ i{
-  padding:  0 30px;
+.options_ i {
+  padding: 0 30px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-.options_ i:hover{
+.options_ i:hover {
   background-color: #fcecec;
   border-top: 1px solid whitesmoke;
   box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.24);
@@ -283,17 +288,17 @@ td {
 .box {
   justify-items: center;
 }
-#mail_content{
+#mail_content {
   justify-content: center;
   padding-top: 60px;
 }
-#mail_content h4 , 
+#mail_content h4,
 #mail_content label,
-#mail_content p{
+#mail_content p {
   padding: 50px;
-  justify-content: space-around;
+  text-align: center;
 }
-.replay{
+.replay {
   margin-top: 15px;
   margin-left: 10px;
   margin-bottom: 15px;
@@ -309,23 +314,67 @@ td {
   border: none;
   box-shadow: 0px 2px 5px -2px rgb(0, 0, 0, 0.75);
 }
-.footer{
+.footer {
   display: flex;
 }
-.replay:hover{
+.replay:hover {
   background-color: #c04b37;
 }
 
-.search{
+.search {
   background-color: blue;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
-
-#new{
+#new {
   display: flex;
   flex-direction: column;
   align-items: left;
+  height: 200px;
+}
+
+form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+.title {
+  width: 100%;
+  height: 50px;
+  background: black;
+  color: gainsboro;
+  font-size: 12px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+form input,
+form textarea {
+  border: 0;
+  margin: 10px 0;
+  padding: 20px;
+  outline: none;
+  background: #f5f5f5;
+  border-bottom: 1px solid black;
+}
+
+form button {
+  padding: 15px;
+  background: blue;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  margin: 20px auto 0;
+  border-radius: 30px;
+  text-align: center;
 }

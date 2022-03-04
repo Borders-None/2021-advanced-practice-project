@@ -20,8 +20,8 @@
       </div>
       <div class="second">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" placeholder="Search Mail" />
-        <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        <input id="search" type="text" placeholder="Search Mail" />
+        <i class="fa fa-sort-desc" onclick="search()" aria-hidden="true"></i>
       </div>
       <div class="last">
         <i class="fa fa-th" aria-hidden="true"></i>
@@ -111,20 +111,26 @@
           </div>
        </div> 
        <table class="mailbox">
-          <input id="search">
-          <button onclick="search()" class="search">Search</button>
-          <button onclick="sorting()">Sort</button>
+          
           <tbody id="mailbox">
             
           </tbody>
 
        </table>  
+      
+       
        <div id="new">
-         <input id="sender" type="text" >
-         <input id="title" type="text" >
-         <textarea  name="" id="content" cols="30" rows="10"></textarea>
-         <button onclick="send()">Send</button>
-       </div>          
+            <form>
+            <div class="title">
+             <h1>new message</h1>
+            </div>
+             <input id="sender" name="To" type="text" placeholder="TO">
+             <input id="title"  name="Subject" type="text" placeholder="Subject">
+             <textarea  name="message" id="content" cols="30" rows="10" placeholder="Message"></textarea>
+             <button onclick="send()">Send</button>
+
+            </form>
+       </div>
    </div>             
   </body>
 </html>
